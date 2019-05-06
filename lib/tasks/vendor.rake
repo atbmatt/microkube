@@ -4,7 +4,9 @@ namespace :vendor do
     puts '----- Clone the frontend apps repos -----'
     puts
     @config['vendor'].each do |name, repo_url|
-      sh "git clone #{repo_url} vendor/#{name}"
+      if Dir.empty?("vendor/#{name}")
+        sh "git clone #{repo_url} vendor/#{name}"
+      end
       puts
     end
   end

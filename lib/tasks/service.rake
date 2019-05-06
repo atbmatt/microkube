@@ -160,6 +160,25 @@ namespace :service do
     @switch.call(args, method(:start), method(:stop))
   end
 
+  desc 'Run the vendor frontend application'
+  task :vendor, [:command] do |task, args|
+    args.with_defaults(:command => 'start')
+
+    def start
+      puts '----- Starting the vendor frontend -----'
+      # sh 'source ./bin/set-env.sh'
+      sh 'rake vendor:clone'
+      sh 'docker-compose -f compose/vendor.yaml up -d'
+    end
+
+    def stop
+      puts '----- Stopping the vendor frontend -----'
+      sh 'docker-compose rm -fs vendor'
+    end
+
+    @switch.call(args, method(:start), method(:stop))
+  end
+
   desc 'Run the tower application'
   task :tower, [:command] do |task, args|
     args.with_defaults(:command => 'start')
@@ -205,9 +224,13 @@ namespace :service do
       sleep(5)
       Rake::Task["service:setup"].invoke('start')
       Rake::Task["service:app"].invoke('start')
-      Rake::Task["service:frontend"].invoke('start')
+      # Rake::Task["service:frontend"].invoke('start')
       Rake::Task["service:tower"].invoke('start')
       Rake::Task["service:utils"].invoke('start')
+      Rake::Task["service:cryptonodes"].invoke('start')
+      Rake::Task["service:daemons"].invoke('start')
+      Rake::Task["service:arke"].invoke('start')
+      Rake::Task["service:vendor"].invoke('start')
     end
 
     def stop
@@ -215,9 +238,13 @@ namespace :service do
       Rake::Task["service:backend"].invoke('stop')
       Rake::Task["service:setup"].invoke('stop')
       Rake::Task["service:app"].invoke('stop')
-      Rake::Task["service:frontend"].invoke('stop')
+      # Rake::Task["service:frontend"].invoke('stop')
       Rake::Task["service:tower"].invoke('stop')
       Rake::Task["service:utils"].invoke('start')
+      Rake::Task["service:cryptonodes"].invoke('stop')
+      Rake::Task["service:daemons"].invoke('stop')
+      Rake::Task["service:arke"].invoke('stop')
+      Rake::Task["service:vendor"].invoke('stop')
     end
 
     @switch.call(args, method(:start), method(:stop))
