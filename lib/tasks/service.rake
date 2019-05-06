@@ -173,7 +173,7 @@ namespace :service do
 
     def stop
       puts '----- Stopping the vendor frontend -----'
-      sh 'docker-compose rm -fs vendor'
+      sh 'docker-compose rm -fs frontend'
     end
 
     @switch.call(args, method(:start), method(:stop))
@@ -240,7 +240,7 @@ namespace :service do
       Rake::Task["service:app"].invoke('stop')
       # Rake::Task["service:frontend"].invoke('stop')
       Rake::Task["service:tower"].invoke('stop')
-      Rake::Task["service:utils"].invoke('start')
+      Rake::Task["service:utils"].invoke('stop')
       Rake::Task["service:cryptonodes"].invoke('stop')
       Rake::Task["service:daemons"].invoke('stop')
       Rake::Task["service:arke"].invoke('stop')
