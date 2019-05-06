@@ -46,7 +46,7 @@ install_microkube() {
   rvm use --default 2.5.3
   gem install bundler
 
-  git clone https://github.com/rubykube/microkube.git
+  git clone https://github.com/atbmatt/microkube.git
   cd microkube
   cp $HOME/app.yml config/
 

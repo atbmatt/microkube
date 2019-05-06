@@ -224,7 +224,36 @@ namespace :service do
       sleep(5)
       Rake::Task["service:setup"].invoke('start')
       Rake::Task["service:app"].invoke('start')
-      # Rake::Task["service:frontend"].invoke('start')
+      Rake::Task["service:frontend"].invoke('start')
+      Rake::Task["service:tower"].invoke('start')
+      Rake::Task["service:utils"].invoke('start')
+    end
+
+    def stop
+      Rake::Task["service:proxy"].invoke('stop')
+      Rake::Task["service:backend"].invoke('stop')
+      Rake::Task["service:setup"].invoke('stop')
+      Rake::Task["service:app"].invoke('stop')
+      Rake::Task["service:frontend"].invoke('stop')
+      Rake::Task["service:tower"].invoke('stop')
+      Rake::Task["service:utils"].invoke('stop')
+    end
+
+    @switch.call(args, method(:start), method(:stop))
+  end
+
+  desc 'Run the micro app with dependencies with optional and vendor frontend'
+  task :full, [:command] => 'render:config' do |task, args|
+    args.with_defaults(:command => 'start')
+
+    def start
+      Rake::Task["service:proxy"].invoke('start')
+      Rake::Task["service:backend"].invoke('start')
+      puts 'Wait 5 second for backend'
+      sleep(5)
+      Rake::Task["service:setup"].invoke('start')
+      Rake::Task["service:app"].invoke('start')
+      #Rake::Task["service:frontend"].invoke('start')
       Rake::Task["service:tower"].invoke('start')
       Rake::Task["service:utils"].invoke('start')
       Rake::Task["service:cryptonodes"].invoke('start')
@@ -238,7 +267,7 @@ namespace :service do
       Rake::Task["service:backend"].invoke('stop')
       Rake::Task["service:setup"].invoke('stop')
       Rake::Task["service:app"].invoke('stop')
-      # Rake::Task["service:frontend"].invoke('stop')
+      #Rake::Task["service:frontend"].invoke('stop')
       Rake::Task["service:tower"].invoke('stop')
       Rake::Task["service:utils"].invoke('stop')
       Rake::Task["service:cryptonodes"].invoke('stop')
