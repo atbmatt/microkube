@@ -42,8 +42,8 @@ install_microkube() {
   sudo -u app bash <<EOS
   cd /home/app
   source /home/app/.rvm/scripts/rvm
-  rvm install --quiet-curl 2.5.3
-  rvm use --default 2.5.3
+  rvm install --quiet-curl 2.6.0
+  rvm use --default 2.6.0
   gem install bundler
 
   git clone https://github.com/atbmatt/microkube.git
