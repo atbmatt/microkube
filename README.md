@@ -27,8 +27,12 @@ rake -T
 
 ### Run everything
 
+Run one of the following rakefile build commands depending on your use case:
+
 ```
-rake service:all
+rake service:mini    # This configuration builds the bare minimum images for development (but includes vendor frontend)
+rake service:all     # The stock rubykube configuration
+rake service:full    # Runs all the services with the vendor frontend
 ```
 
 Insert in file `/etc/hosts`
