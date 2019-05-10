@@ -1,19 +1,3 @@
-- id:                     usd
-  name:                   US Dollar
-  symbol:                 '$'
-  type:                   fiat
-  precision:              2
-  base_factor:            1
-  enabled:                true
-  min_deposit_amount:     0
-  min_collection_amount:  0
-  withdraw_limit_24h:     100
-  withdraw_limit_72h:     200
-  deposit_fee:            0
-  withdraw_fee:           0
-  position:               1
-  options:                {}
-
 - id:                     cad
   name:                   CAD Dollar
   symbol:                 '$'
@@ -28,6 +12,22 @@
   deposit_fee:            0
   withdraw_fee:           0
   position:               1
+  options:                {}
+
+- id:                     usd
+  name:                   US Dollar
+  symbol:                 '$'
+  type:                   fiat
+  precision:              2
+  base_factor:            1
+  enabled:                true
+  min_deposit_amount:     0
+  min_collection_amount:  0
+  withdraw_limit_24h:     100
+  withdraw_limit_72h:     200
+  deposit_fee:            0
+  withdraw_fee:           0
+  position:               2
   options:                {}
 
 - id:                     eth
@@ -46,7 +46,7 @@
   withdraw_limit_72h:     0.5
   deposit_fee:            0
   withdraw_fee:           0
-  position:               2
+  position:               3
   options:
     # ETH tx fees configurations.
     #
@@ -62,7 +62,7 @@
   type:                   coin
   precision:              8
   base_factor:            1_000_000 # IMPORTANT: Don't forget to update this variable according
-  enabled:                true      #            to your ERC20-based currency requirements
+  enabled:                false      #            to your ERC20-based currency requirements
   # Deposits with less amount are skipped during blockchain synchronization.
   # We advise to set value 10 times bigger than the network fee to prevent losses.
   # NOTE: Network fee is paid in ETH but min_deposit_amount is in TRST.
@@ -72,7 +72,7 @@
   withdraw_limit_72h:     600
   deposit_fee:            0
   withdraw_fee:           0
-  position:               3
+  position:               4
   options:
     # ERC20 tx fees configurations.
     #
@@ -91,7 +91,7 @@
   type:                   coin
   precision:              8
   base_factor:            1_000_000 # IMPORTANT: Don't forget to update this variable according
-  enabled:                true      #            to your ERC20-based currency requirements
+  enabled:                false      #            to your ERC20-based currency requirements
   # Deposits with less amount are skipped during blockchain synchronization.
   # We advise to set value 10 times bigger than the network fee to prevent losses.
   # NOTE: Network fee is paid in ETH but min_deposit_amount is in TRST.
@@ -101,7 +101,7 @@
   withdraw_limit_72h:     600
   deposit_fee:            0
   withdraw_fee:           0
-  position:               4
+  position:               5
   options:
     # ERC20 tx fees configurations.
     #
