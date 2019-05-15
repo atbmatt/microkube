@@ -48,11 +48,12 @@ install_microkube() {
 
   git clone https://github.com/atbmatt/microkube.git
   cd microkube
+  git checkout orion
   cp $HOME/app.yml config/
 
   bundle install
   rake render:config
-  rake service:mini
+  rake service:full
 
   ./bin/install_webhook
 EOS
