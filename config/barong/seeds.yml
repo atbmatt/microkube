@@ -7,12 +7,12 @@
 # Note: email is the only required field here.
 users:
   - email: admin@orion.io
-    password: admin
+    password: 0lDHd9ufs9t@
     role: admin
     state: active
     level: 3
   - email: samantha@orion.io
-    password: password
+    password: Am8icnzEI3d!
     role: member
     state: active
     level: 3
