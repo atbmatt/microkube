@@ -6,13 +6,13 @@
 #
 # Note: email is the only required field here.
 users:
-  - email: admin@barong.io
-    password: 0lDHd9ufs9t@
+  - email: admin@orion.io
+    password: admin
     role: admin
     state: active
     level: 3
-  - email: john@barong.io
-    password: Am8icnzEI3d!
+  - email: samantha@orion.io
+    password: password
     role: member
     state: active
     level: 3
