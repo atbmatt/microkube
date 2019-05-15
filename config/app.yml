@@ -13,7 +13,8 @@ images:
   postmaster: quay.io/openware/postmaster:0.0.3
   arke: rubykube/arke:0.1.5
 vendor:
-  frontend: https://github.com/atbmatt/mikroapp.git
+  frontend: git@github.com:msembinelli/mikroapp.git
+  tower: git@github.com:msembinelli/tower.git
 storage:
   provider: "Google"
   bucketName: "microkube-barong-docs-bucket"
