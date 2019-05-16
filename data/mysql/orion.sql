@@ -19,10 +19,21 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-LOCK TABLES `accounts` WRITE;
-INSERT INTO `accounts` VALUES
-  (1,1,'ast',1000,0,NOW(),NOW()),
-  (2,1,'cad',0,0,NOW(),NOW()),
-  (3,2,'ast',0,0,NOW(),NOW()),
-  (4,2,'cad',10000,0,NOW(),NOW());
+LOCK TABLES `accounts` WRITE, `members` READ;
+INSERT INTO `accounts`
+  SELECT 1, members.id, 'ast', 1000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'admin@orion.io';
+INSERT INTO `accounts`
+  SELECT 2, members.id, 'cad', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'admin@orion.io';
+INSERT INTO `accounts`
+  SELECT 3, members.id, 'ast', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'samantha@orion.io';
+INSERT INTO `accounts`
+  SELECT 4, members.id, 'cad', 1000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'samantha@orion.io';
 UNLOCK TABLES;
