@@ -283,7 +283,7 @@ namespace :service do
       Rake::Task["service:utils"].invoke('start')
       Rake::Task["service:cryptonodes"].invoke('start')
       Rake::Task["service:daemons"].invoke('start')
-      Rake::Task["service:arke"].invoke('start')
+      #Rake::Task["service:arke"].invoke('start')
       Rake::Task["service:vendor"].invoke('start')
     end
 
@@ -293,9 +293,9 @@ namespace :service do
       Rake::Task["service:setup"].invoke('stop')
       Rake::Task["service:app"].invoke('stop')
       Rake::Task["service:utils"].invoke('stop')
-      Rake::Task["service:cryptonodes"].invoke('stop')
+      # Rake::Task["service:cryptonodes"].invoke('stop')
       Rake::Task["service:daemons"].invoke('stop')
-      Rake::Task["service:arke"].invoke('stop')
+      #Rake::Task["service:arke"].invoke('stop')
       Rake::Task["service:vendor"].invoke('stop')
     end
 
