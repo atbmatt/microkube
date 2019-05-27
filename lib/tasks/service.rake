@@ -281,7 +281,7 @@ namespace :service do
       Rake::Task["service:setup"].invoke('start')
       Rake::Task["service:app"].invoke('start')
       Rake::Task["service:utils"].invoke('start')
-      Rake::Task["service:cryptonodes"].invoke('start')
+      # Rake::Task["service:cryptonodes"].invoke('start')
       Rake::Task["service:daemons"].invoke('start')
       #Rake::Task["service:arke"].invoke('start')
       Rake::Task["service:vendor"].invoke('start')
