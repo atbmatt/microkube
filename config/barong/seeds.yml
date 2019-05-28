@@ -16,6 +16,11 @@ users:
     role: member
     state: active
     level: 3
+  - email: al@orion.io
+    password: Am8icnzEI3d!
+    role: member
+    state: active
+    level: 3
 
 levels:
   - key: email
