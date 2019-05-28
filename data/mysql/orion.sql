@@ -21,19 +21,87 @@ CREATE TABLE `accounts` (
 
 LOCK TABLES `accounts` WRITE, `members` READ;
 INSERT INTO `accounts`
-  SELECT 1, members.id, 'ast', 1000, 0, NOW(), NOW()
+  SELECT 1, members.id, 'cad', 0, 0, NOW(), NOW()
   FROM `members`
   WHERE email = 'admin@orion.io';
 INSERT INTO `accounts`
-  SELECT 2, members.id, 'cad', 0, 0, NOW(), NOW()
+  SELECT 2, members.id, 'ast', 1000, 0, NOW(), NOW()
   FROM `members`
   WHERE email = 'admin@orion.io';
 INSERT INTO `accounts`
-  SELECT 3, members.id, 'ast', 0, 0, NOW(), NOW()
+  SELECT 3, members.id, 'art', 1000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'admin@orion.io';
+INSERT INTO `accounts`
+  SELECT 4, members.id, 'bdt', 1000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'admin@orion.io';
+INSERT INTO `accounts`
+  SELECT 5, members.id, 'wpt', 1000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'admin@orion.io';
+INSERT INTO `accounts`
+  SELECT 6, members.id, 'ypt', 1000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'admin@orion.io';
+INSERT INTO `accounts`
+  SELECT 7, members.id, 'sft', 1000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'admin@orion.io';
+INSERT INTO `accounts`
+  SELECT 8, members.id, 'cad', 1000, 0, NOW(), NOW()
   FROM `members`
   WHERE email = 'samantha@orion.io';
 INSERT INTO `accounts`
-  SELECT 4, members.id, 'cad', 1000, 0, NOW(), NOW()
+  SELECT 9, members.id, 'ast', 0, 0, NOW(), NOW()
   FROM `members`
   WHERE email = 'samantha@orion.io';
+INSERT INTO `accounts`
+  SELECT 10, members.id, 'art', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'samantha@orion.io';
+INSERT INTO `accounts`
+  SELECT 11, members.id, 'bdt', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'samantha@orion.io';
+INSERT INTO `accounts`
+  SELECT 12, members.id, 'wpt', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'samantha@orion.io';
+INSERT INTO `accounts`
+  SELECT 13, members.id, 'ypt', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'samantha@orion.io';
+INSERT INTO `accounts`
+  SELECT 14, members.id, 'sft', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'samantha@orion.io';
+INSERT INTO `accounts`
+  SELECT 15, members.id, 'cad', 10000, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'al@orion.io';
+INSERT INTO `accounts`
+  SELECT 16, members.id, 'ast', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'al@orion.io';
+INSERT INTO `accounts`
+  SELECT 17, members.id, 'art', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'al@orion.io';
+INSERT INTO `accounts`
+  SELECT 18, members.id, 'bdt', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'al@orion.io';
+INSERT INTO `accounts`
+  SELECT 19, members.id, 'wpt', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'al@orion.io';
+INSERT INTO `accounts`
+  SELECT 20, members.id, 'ypt', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'al@orion.io';
+INSERT INTO `accounts`
+  SELECT 21, members.id, 'sft', 0, 0, NOW(), NOW()
+  FROM `members`
+  WHERE email = 'al@orion.io';
 UNLOCK TABLES;
