@@ -24,8 +24,8 @@ services:
     image: node:11
     user: "${UID}:${GID}"
     volumes:
-      - ../vendor/frontend:/home/node
-      - ../config/frontend/tower.js:/home/app/env.js
+      - ../vendor/tower:/home/node
+      - ../config/frontend/tower.js:/home/node/public/env.js
     command:
       - sh
       - -c
