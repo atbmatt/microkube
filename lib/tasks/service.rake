@@ -174,6 +174,7 @@ namespace :service do
     def stop
       puts '----- Stopping the vendor frontend -----'
       sh 'docker-compose rm -fs frontend'
+      sh 'docker-compose rm -fs tower'
     end
 
     @switch.call(args, method(:start), method(:stop))
