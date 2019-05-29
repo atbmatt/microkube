@@ -34,8 +34,8 @@ services:
         yarn
         yarn start
     expose:
-      - '8080'
+      - '3000'
     labels:
       traefik.enable: true
       traefik.frontend.rule: "PathPrefix:/tower;Host:<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>"
-      traefik.port: 8080
+      traefik.port: 3000
