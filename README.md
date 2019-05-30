@@ -48,6 +48,12 @@ Email: admin@barong.io, password: 0lDHd9ufs9t@
 Email: john@barong.io, password: Am8icnzEI3d!
 ```
 
+### Load Orion Example DB
+The `orion.sql` file will load some starting balances for the three seeded users.
+```
+rake db:load
+```
+
 ## Usage
 
 ### Initial configuration

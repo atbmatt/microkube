@@ -11,16 +11,19 @@ users:
     role: admin
     state: active
     level: 3
+    uid: ID59F88293B6
   - email: samantha@orion.io
     password: Am8icnzEI3d!
     role: member
     state: active
     level: 3
+    uid: ID8386BD19E2
   - email: al@orion.io
     password: Am8icnzEI3d!
     role: member
     state: active
     level: 3
+    uid: ID1A8E3B75E1
 
 levels:
   - key: email

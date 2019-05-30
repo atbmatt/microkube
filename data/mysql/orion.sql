@@ -1,3 +1,33 @@
+DROP TABLE IF EXISTS `members`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `members` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` varchar(12) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `level` int(11) NOT NULL,
+  `role` varchar(16) NOT NULL,
+  `state` varchar(16) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_members_on_email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `members`
+--
+
+LOCK TABLES `members` WRITE;
+/*!40000 ALTER TABLE `members` DISABLE KEYS */;
+INSERT INTO `members` VALUES
+(1,'ID59F88293B6','admin@orion.io',3,'admin','active',NOW(),NOW()),
+(2,'ID8386BD19E2','samantha@orion.io',3,'member','active',NOW(),NOW()),
+(3,'ID1A8E3B75E1','al@orion.io',3,'member','active',NOW(),NOW());
+/*!40000 ALTER TABLE `members` ENABLE KEYS */;
+UNLOCK TABLES;
+
 DROP TABLE IF EXISTS `accounts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
